@@ -1,0 +1,24 @@
+{
+  "name": "polskibus",
+  "version": "1.0.0",
+  "description": "wyszukiwarka polaczen polskiego busa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fireveined/polskiBusWyszukiwarka.git"
+  },
+  "author": "Mateusz Szymik (Fireveined)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fireveined/polskiBusWyszukiwarka/issues"
+  },
+  "homepage": "https://github.com/fireveined/polskiBusWyszukiwarka#readme",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.4.0"
+  },
+  "devDependencies": {}
+}

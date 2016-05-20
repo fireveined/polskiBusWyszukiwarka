@@ -1,0 +1,393 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Lato);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 77.5%; }
+
+body {
+  font-size: 1.4rem;
+  font-family: Lato, Open Sans, Cambria, Cochin, Georgia, Times, Times New Roman, serif; }
+
+[data-tooltip],
+.tooltip {
+  position: relative;
+  cursor: pointer; }
+
+/* Base styles for the entire tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after {
+  position: absolute;
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none; }
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1; }
+
+/* Base styles for the tooltip's directional arrow */
+.tooltip:before,
+[data-tooltip]:before {
+  z-index: 1001;
+  border: 6px solid transparent;
+  background: transparent;
+  content: ""; }
+
+/* Base styles for the tooltip's content area */
+.tooltip:after,
+[data-tooltip]:after {
+  z-index: 1000;
+  padding: 8px;
+  width: 220px;
+  background-color: #000;
+  background-color: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: pre-wrap; }
+
+/* Directions */
+/* Top (default) */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after,
+.tooltip-top:before,
+.tooltip-top:after {
+  bottom: 100%;
+  left: 50%; }
+
+[data-tooltip]:before,
+.tooltip:before,
+.tooltip-top:before {
+  margin-left: -6px;
+  margin-bottom: -12px;
+  border-top-color: #000;
+  border-top-color: rgba(51, 51, 51, 0.9); }
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltip]:after,
+.tooltip:after,
+.tooltip-top:after {
+  margin-left: -80px; }
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after,
+.tooltip-top:hover:before,
+.tooltip-top:hover:after,
+.tooltip-top:focus:before,
+.tooltip-top:focus:after {
+  -webkit-transform: translateY(-12px);
+  -moz-transform: translateY(-12px);
+  transform: translateY(-12px); }
+
+/* Left */
+.tooltip-left:before,
+.tooltip-left:after {
+  right: 100%;
+  bottom: 50%;
+  left: auto; }
+
+.tooltip-left:before {
+  margin-left: 0;
+  margin-right: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-left-color: #000;
+  border-left-color: rgba(51, 51, 51, 0.9); }
+
+.tooltip-left:hover:before,
+.tooltip-left:hover:after,
+.tooltip-left:focus:before,
+.tooltip-left:focus:after {
+  -webkit-transform: translateX(-12px);
+  -moz-transform: translateX(-12px);
+  transform: translateX(-12px); }
+
+/* Bottom */
+.tooltip-bottom:before,
+.tooltip-bottom:after {
+  top: 100%;
+  bottom: auto;
+  left: 50%; }
+
+.tooltip-bottom:before {
+  margin-top: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-bottom-color: #000;
+  border-bottom-color: rgba(51, 51, 51, 0.9); }
+
+.tooltip-bottom:hover:before,
+.tooltip-bottom:hover:after,
+.tooltip-bottom:focus:before,
+.tooltip-bottom:focus:after {
+  -webkit-transform: translateY(12px);
+  -moz-transform: translateY(12px);
+  transform: translateY(12px); }
+
+/* Right */
+.tooltip-right:before,
+.tooltip-right:after {
+  bottom: 50%;
+  left: 100%; }
+
+.tooltip-right:before {
+  margin-bottom: 0;
+  margin-left: -12px;
+  border-top-color: transparent;
+  border-right-color: #000;
+  border-right-color: rgba(51, 51, 51, 0.9); }
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  -moz-transform: translateX(12px);
+  transform: translateX(12px); }
+
+/* Move directional arrows down a bit for left/right tooltips */
+.tooltip-left:before,
+.tooltip-right:before {
+  top: 3px; }
+
+/* Vertically center tooltip content for left/right tooltips */
+.tooltip-left:after,
+.tooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px; }
+
+.container {
+  max-width: 1224px;
+  margin: 0 auto; }
+
+.button {
+  border-radius: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 6px 22px;
+  font-size: 1.4rem; }
+  .button i {
+    margin-right: 5px; }
+
+input[type=checkbox] {
+  visibility: hidden; }
+
+.habit-checkbox {
+  width: 20px;
+  position: relative;
+  margin: 20px auto; }
+  .habit-checkbox label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5); }
+    .habit-checkbox label:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #333;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg); }
+    .habit-checkbox label:hover::after {
+      opacity: 0.5; }
+  .habit-checkbox input[type=checkbox] {
+    visibility: hidden; }
+    .habit-checkbox input[type=checkbox]:checked + label:after {
+      opacity: 1; }
+
+.page-header {
+  background: url("../img/header_bg.jpg") center no-repeat;
+  color: white;
+  height: 264px; }
+
+.title-bar {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  height: 50px;
+  display: flex;
+  padding-left: 20px;
+  line-height: 50px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0px 5px 19px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 19px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 19px -2px rgba(0, 0, 0, 0.5); }
+  .title-bar .logo {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700; }
+
+.page-nav {
+  display: inline-flex;
+  justify-content: flex-end; }
+  .page-nav .header-menu {
+    display: none; }
+  .page-nav .hamburger {
+    position: absolute;
+    right: 20px;
+    top: 6px; }
+    .page-nav .hamburger img {
+      width: 30px; }
+
+.section-tpl, .desc-section, .habits-section {
+  margin-top: 30px;
+  padding-left: 17px;
+  padding-right: 17px; }
+  .section-tpl h2, .desc-section h2, .habits-section h2 {
+    color: #4acaa8;
+    font-weight: 700;
+    font-size: 2.9rem;
+    line-height: 1.9; }
+  .section-tpl h3, .desc-section h3, .habits-section h3 {
+    color: #777;
+    font-weight: 700;
+    font-size: 2.1rem;
+    margin-bottom: 40px; }
+  .section-tpl p, .desc-section p, .habits-section p {
+    color: #777;
+    line-height: 1.6; }
+
+.habits-list .habit {
+  text-align: center;
+  padding: 10px;
+  background-color: #c8c8ff;
+  border-bottom: 2px solid #dedede; }
+.habits-list .habit-difficulty {
+  display: none; }
+.habits-list .habit-info {
+  display: none;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.4; }
+.habits-list .habit.show-info .habit-info {
+  display: block; }
+.habits-list .habit-name {
+  font-size: 1.6rem;
+  margin-bottom: 12px; }
+.habits-list .calendar-title {
+  margin-top: 20px; }
+.habits-list .habit-calendar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; }
+  .habits-list .habit-calendar .field {
+    flex-grow: 1; }
+
+@media only screen and (min-width: 600px) {
+  .habits-list .habit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0; }
+  .habits-list .habit-name {
+    flex-basis: 25%;
+    margin-bottom: 0px; }
+  .habits-list .habit-calendar {
+    margin-top: 0px;
+    flex-basis: 100%; }
+    .habits-list .habit-calendar .field:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.04); }
+    .habits-list .habit-calendar .field:last-child {
+      background-color: rgba(0, 0, 0, 0.19); } }
+.page-footer {
+  margin-top: 100px;
+  padding: 11px 0px;
+  border-top: 1px #E3E3E3 solid;
+  background-color: #ebecf3;
+  text-align: center; }
+  .page-footer .copyright {
+    color: #A3A3A3;
+    line-height: 35px; }
+  .page-footer .navigation a {
+    color: #000000;
+    font-weight: 300; }
+  .page-footer .navigation li {
+    padding: 20px; }
+
+/*# sourceMappingURL=style.css.map */

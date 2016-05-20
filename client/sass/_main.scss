@@ -1,0 +1,116 @@
+.section-tpl{
+    
+
+    margin-top: 30px;
+    
+    padding-left:17px;
+    padding-right:17px;
+     
+    h2{
+        color: #4acaa8;
+        font-weight: 700;
+         font-size: 2.9rem;
+         line-height: 1.9;     
+    }
+    
+    h3{
+       color: #777;
+       font-weight: 700;
+       font-size: 2.1rem;
+       margin-bottom: 40px;
+    }
+    
+    p{
+        color:#777;
+        line-height: 1.6;
+    }
+}
+
+
+
+.desc-section{
+    @extend .section-tpl;
+
+}
+
+.habits-section{
+    @extend .section-tpl;
+}
+
+.habits-list{
+
+    
+    .habit{
+        text-align:center;
+        padding: 10px;
+        background-color: rgb(200,200,255);
+        border-bottom: 2px solid rgb(222,222,222);
+    }
+    .habit-difficulty{
+        display:none;
+    }
+    
+    .habit-info{
+        display: none;
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+    
+    .habit.show-info .habit-info{
+        display: block;
+    }
+    
+    .habit-name{
+        font-size: 1.6rem;
+        margin-bottom: 12px;;
+    }
+    
+    .calendar-title{
+        margin-top:20px;
+    }
+    
+    .habit-calendar{
+        display: flex;
+        justify-content: space-between;
+        margin-top:10px;
+        
+        .field{
+            flex-grow: 1;
+        }         
+    }
+}//habit-list
+
+
+
+@media only screen and (min-width: 600px){
+    
+    .habits-list{
+        .habit{
+        display: flex;    
+        align-items: center;
+        justify-content: space-between;
+        padding:0;
+        }
+        
+        .habit-name{
+            flex-basis: 25%;
+            margin-bottom:0px;
+        }
+        
+        .habit-calendar{
+            margin-top: 0px;
+            flex-basis: 100%;
+
+        .field:nth-child(odd) {
+            background-color:rgba(0,0,0,0.04);
+        }
+        
+        .field:last-child {
+            background-color:rgba(0,0,0,0.19);
+        }
+        
+        }
+    }
+    
+}
